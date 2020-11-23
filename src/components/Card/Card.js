@@ -1,24 +1,40 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import { useImage } from "../hooks/useImage";
+import { useImage } from "../../hooks/useImage";
 import { CardSkeleton } from "./CardSkeleton";
+import { SearchContext } from "../../App";
+import { modal_Open } from "../../actions/fullViewModal";
 export const Card = ({
   img: {
-    urls: { regular },
+    urls: { regular, full },
     id,
     alt_description,
     links: { download },
   },
+  animationDelay,
 }) => {
   const [isLoaded] = useImage(regular);
+  const { modalDispatch } = useContext(SearchContext);
   return isLoaded ? (
-    <div key={id} className="card">
+    <div
+      style={{ animationDelay: `${animationDelay}ms` }}
+      key={id}
+      className="card">
       <div className="img-wrapper">
         <img src={regular} alt={alt_description} className="card__image" />
       </div>
       <div className="download">
-        <button>View Full size</button>
-        <a target="_blank" rel="nopeneer noreferrer" href={download}>
+        <button
+          onClick={() => {
+            modalDispatch(modal_Open({ url: full, alt_description }));
+          }}>
+          View Full size
+        </button>
+        <a
+          download
+          target="_blank"
+          rel="nopeneer noreferrer"
+          href={download}>
           {" "}
           <i>
             <svg
@@ -36,6 +52,7 @@ export const Card = ({
     <CardSkeleton />
   );
 };
+
 Card.defaultProps = {
   img: {},
 };

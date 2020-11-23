@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
-import { SearchContext } from "../App";
+import { SearchContext } from "../../App";
 export const LoadMoreButton = () => {
   const {
     picsData: { loading, fetchPhotos },
+    pageData: { currentPage },
   } = useContext(SearchContext);
   const handleFetchMorePhotos = () => {
-    fetchPhotos();
+    console.log(currentPage);
+    fetchPhotos({ pageNumber: currentPage + 1 });
   };
   return (
     <button

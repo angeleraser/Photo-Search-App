@@ -1,0 +1,53 @@
+.full-view-modal {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.3s;
+}
+
+.full-view-modal.open {
+  display: flex;
+}
+
+.full-view-modal.closed {
+  display: none;
+}
+
+.full-view-modal .img-wrapper {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border-radius: 6px;
+  width: 80%;
+  height: 90%;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.full-view-modal .img-wrapper img {
+  margin-top: 12px;
+  height: calc(100% - 34px);
+  width: 100%;
+  object-fit: cover;
+}
+
+.full-view-modal .close-modal {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.full-view-modal .close-modal:focus {
+  outline: none;
+}
+
+.full-view-modal .close-modal svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--danger);
+}

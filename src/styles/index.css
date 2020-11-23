@@ -1,12 +1,15 @@
 /* Reset  */
 @import "./base/reset.min.css";
 
-@import "./components/SearchPhotos.css";
+/* Components */
+@import "./components/SearchForm/SearchPhotos.css";
 
 @import "./components/Buttons.css";
 
-@import "./components/CardsGrid.css";
+@import "./components/CardsGrid/CardsGrid.css";
 
-@import "./components/Card.css";
+@import "./components/Card/Card.css";
 
 @import "./components/Spinners.css";
+
+@import "./components/FullViewModal/FullViewModal.css";

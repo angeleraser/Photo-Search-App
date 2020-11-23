@@ -1,18 +1,21 @@
 import React, { useContext } from "react";
-import { SearchContext } from "../App";
+import { page_resetPageState } from "../../actions/page";
+import { pics_CleanAllState, pics_SetQuery } from "../../actions/pics";
+import { SearchContext } from "../../App";
 export const SearchPhotos = () => {
   const {
-    query,
-    setQuery,
-    picsData: { pics, resetSearch, fetchPhotos, loading },
+    picsData: { pics, loading, query, fetchPhotos },
+    picsDispatch,
+    pageDispatch,
   } = useContext(SearchContext);
   const searchPhotos = (e) => {
     e.preventDefault();
     if (query.trim().length) {
       if (pics.length) {
-        resetSearch();
+        pageDispatch(page_resetPageState());
+        picsDispatch(pics_CleanAllState());
       }
-      fetchPhotos();
+      fetchPhotos({ pageNumber: 1 });
     }
   };
   return (
@@ -27,7 +30,9 @@ export const SearchPhotos = () => {
             name="query"
             id="query"
             value={query}
-            onChange={({ target: { value } }) => setQuery(value)}
+            onChange={({ target: { value } }) =>
+              picsDispatch(pics_SetQuery(value))
+            }
           />
         </label>
         <button disabled={loading} type="submit" className="button">

@@ -8,6 +8,21 @@
   box-shadow: var(--box-shadow);
 }
 
+.card {
+  animation: slideDown 0.2s linear backwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(10px);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .card .img-wrapper {
   height: 360px;
   width: 100%;

@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+  width: 100%;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 30px;
+  place-content: center;
+  width: 100%;
+}
+
+.loading-cards {
+  width: 100%;
+}
+
+.loading-cards .spinner {
+  margin: 100px auto;
+  width: 60px;
+  height: 50px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.cards-grid:empty {
+  display: flex;
+  justify-content: center;
+}
+
+.cards-grid:empty::after {
+  display: inline-block;
+  content: "There is not any results or images to show";
+  font-size: 32px;
+  text-align: center;
+  width: 90%;
+  margin-top: 100px;
+  color: var(--gray);
+  opacity: 0.8;
+}
+
+.cards-grid.empty h2 {
+  font-size: 32px;
+  text-align: center;
+  width: 90%;
+  margin-top: 100px;
+  color: var(--gray);
+  opacity: 0.8;
+}
