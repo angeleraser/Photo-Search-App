@@ -1,0 +1,30 @@
+.load-more-button .spinner {
+  margin: 100px auto;
+  width: 60px;
+  height: 50px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.load-more-button .spinner {
+  margin: 0;
+  width: 60px;
+  height: 25px;
+}
+
+.load-more-button .spinner > div {
+  width: 4px;
+}
+
+.load-more-button {
+  padding: 10px 14px;
+  background-color: var(--black);
+  box-shadow: var(--box-shadow);
+  border-radius: 6px;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+}

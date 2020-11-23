@@ -1,0 +1,72 @@
+.card,
+.card-skeleton {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+}
+
+.card .img-wrapper {
+  height: 360px;
+  width: 100%;
+}
+
+.card img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+.card .download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.card .download button,
+.card a {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.card .download button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.card a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.card a i {
+  margin-right: 4px;
+}
+
+.card .download svg {
+  fill: var(--gray);
+  width: 14px;
+  height: 14px;
+}
+
+.card-skeleton {
+  justify-content: center;
+  min-height: 380px;
+}
+
+.card-skeleton .spinner {
+  width: 50px;
+  height: 50px;
+  background-color: var(--cyan);
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
