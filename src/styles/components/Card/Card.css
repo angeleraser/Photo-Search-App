@@ -9,7 +9,7 @@
 }
 
 .card {
-  animation: slideDown 0.2s linear backwards;
+  animation: slideDown 0.3s linear backwards;
 }
 
 @keyframes slideDown {
@@ -54,6 +54,9 @@
   padding: 0;
   cursor: pointer;
   color: var(--black);
+}
+.card .download button:focus {
+  outline: none;
 }
 
 .card a {
